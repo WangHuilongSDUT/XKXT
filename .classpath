@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-11.0.1">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ojdbc8_g.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ojdbc8dms_g.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ojdbc8dms.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/simplefan.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-oracle-thin-extras-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbutils-1.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbutils-1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.8.2.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

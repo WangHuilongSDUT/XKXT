@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+      .content
+      {
+        margin-top: 5%;
+        margin-left: 10%;
+        width: 80%;
+        height: 80%;
+      }
+      .header
+      {
+        text-align: center;
+        font-weight: bold;
+        font-family: 华文行楷;
+        margin-bottom: 30px;
+      }
+    </style>
+    <title>学生选课系统</title>
+  </head>
+  <body>
+   <div class="content">
+        <h2 class="header"><a id="header" href="index.html">学生选课系统</a></h2>
+     <div class="forchoosed">
+      <h4>已选课程：</h4>
+       <table class="table table-bordered" id="choosedclasses">
+        <th>课程号</th>
+        <th>课程名</th>
+        <th>先修课</th>
+      </table>
+     </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> 
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="statics/js/common.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+            $.ajax({
+             type: "POST",
+             url: "http://localhost:8080/XKXT/ChoosedClasses",
+             dataType: "text",
+             success: function(data){
+                        if(data=="Error")
+                        {
+                          alert("出现错误！");
+                        }
+                        else
+                        {
+                          //alert(data);
+                          var arr=JSON.parse(data);
+                          courseInfo=arr;
+                          for(var course in data)
+                          {
+                            if(null==arr[course])
+                            {
+                              break;
+                            }
+                            //alert(obj['cname']);
+                            var c_name=arr[course]['cname'];
+                            var c_no=arr[course]['cno'];
+                            var c_cpno="";
+                            if(undefined!=arr[course]['cpno'])
+                            {
+                              c_cpno=arr[course]['cpno'];
+                            }
+                            $("#choosedclasses").append('<tr><td>'+c_no+'</td><td>'+c_name+'</td><td>'+c_cpno+'</td></tr>')
+                          }
+                        }
+                      }
+                  });
+      });
+    </script>
+  </body>
+</html>
